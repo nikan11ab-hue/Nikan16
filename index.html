@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RP City | خرید جم</title>
+<style>
+body{margin:0;background:#f4f6fa;color:#182033;font-family:Tahoma,Arial,sans-serif}
+.wrap{max-width:1000px;margin:25px auto;background:white;border-radius:18px;box-shadow:0 8px 30px #0001;overflow:hidden}
+.top{background:#eef1f5;padding:12px;display:flex;gap:7px}.dot{width:12px;height:12px;border-radius:50%;background:#c7ccd5}.url{flex:1;background:white;border-radius:9px;padding:9px;color:#687080;font-size:13px}
+main{padding:28px}.search{border:1px solid #e2e6ed;border-radius:14px;padding:13px;margin-bottom:25px;color:#555}
+h1{font-size:25px;margin:0 0 8px}.sub{color:#737a88;margin-bottom:22px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.gem{border:1px solid #dfe4ec;border-radius:14px;padding:18px;text-align:center;cursor:pointer}.gem:hover,.gem.active{border-color:#5867ff;box-shadow:0 5px 16px #5867ff22}.gem b{display:block;font-size:22px;margin-bottom:6px}.gem span{color:#777}
+.form{margin-top:24px;border:1px solid #e1e5ec;border-radius:15px;padding:20px}.field{margin-bottom:15px}.field label{display:block;margin-bottom:7px;font-size:14px}.field input{width:100%;padding:12px;border:1px solid #d7dce5;border-radius:9px;font-size:15px;box-sizing:border-box}.btn{width:100%;padding:13px;border:0;border-radius:10px;background:#5867ff;color:white;font-weight:bold;font-size:16px}.note{font-size:12px;color:#777;line-height:1.8;margin-top:12px}#result{display:none;margin-top:15px;padding:13px;border-radius:10px}
+@media(max-width:700px){.grid{grid-template-columns:repeat(2,1fr)}main{padding:18px}}
+</style></head>
+<body>
+<div class="wrap">
+<div class="top"><i class="dot"></i><i class="dot"></i><i class="dot"></i><div class="url">google.com/search?q=خرید+جم+RP+City</div></div>
+<main>
+<div class="search">خرید جم RP City</div>
+<h1>خرید جم RP City</h1>
+<div class="sub">مقدار جم را انتخاب کنید و مشخصات سفارش را وارد کنید.</div>
+<div class="grid">
+<div class="gem" data-gem="500"><b>500 💎</b><span>جم</span></div>
+<div class="gem" data-gem="1000"><b>1,000 💎</b><span>جم</span></div>
+<div class="gem" data-gem="5000"><b>5,000 💎</b><span>جم</span></div>
+<div class="gem" data-gem="10000"><b>10,000 💎</b><span>جم</span></div>
+<div class="gem" data-gem="50000"><b>50,000 💎</b><span>جم</span></div>
+<div class="gem" data-gem="100000"><b>100,000 💎</b><span>جم</span></div>
+</div>
+<section class="form">
+<div class="field"><label>شناسه بازیکن</label><input id="player" placeholder="شناسه بازیکن"></div>
+<div class="field"><label>توکن RP City</label><input id="token" placeholder="توکن RP City را وارد کنید"></div>
+<button class="btn" id="go">ادامه خرید</button>
+<div class="note">این نسخه نمایشی است و اطلاعات را ارسال یا ذخیره نمی‌کند. برای اتصال واقعی به بات روبیکا، توکن بات باید فقط روی سرور امن نگهداری شود. اگر این توکن برای ورود یا دسترسی به حساب استفاده می‌شود، آن را وارد نکنید.</div>
+<div id="result"></div>
+</section>
+</main></div>
+<script>
+let gem="";
+document.querySelectorAll(".gem").forEach(x=>x.onclick=()=>{document.querySelectorAll(".gem").forEach(y=>y.classList.remove("active"));x.classList.add("active");gem=x.dataset.gem});
+document.getElementById("go").onclick=()=>{
+let p=document.getElementById("player").value.trim(),t=document.getElementById("token").value.trim(),r=document.getElementById("result");
+r.style.display="block";
+if(!gem||!p||!t){r.style.background="#fff0e6";r.style.color="#8a4b00";r.textContent="لطفاً همه موارد را کامل کنید.";return}
+let o="RPC-"+Math.floor(10000000+Math.random()*90000000);
+r.style.background="#eef7ee";r.style.color="#216b2a";r.textContent="سفارش "+o+" ثبت شد — "+Number(gem).toLocaleString()+" جم";
+};
+</script>
+</body></html>
